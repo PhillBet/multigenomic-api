@@ -1,0 +1,26 @@
+from mongoengine import fields
+from mongoengine import DynamicDocument
+from mongoengine import DynamicEmbeddedDocument
+
+from .biological_base import BiologicalBase
+
+
+class Products(DynamicEmbeddedDocument):
+    product_id = fields.StringField(required=True)
+    coefficient = fields.IntField(required=False)
+    meta = {'abstract': True}
+
+
+class RegulatoryComplex(DynamicDocument, BiologicalBase):
+
+    abbreviated_name = fields.StringField(required=False, db_field="abbreviatedName")
+    function = fields.StringField(required=False, db_field="function")
+    is_transcription_factor = fields.BooleanField(required=False, db_field="isTranscriptionFactor")
+    products = fields.EmbeddedDocumentListField(Products, required=False)
+    regulatory_continuant_ids = fields.ListField(fields.StringField(), required=False, db_field="regulatoryContinuant_ids")
+    type = fields.StringField(required=False)
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    meta = {'collection': 'regulatoryComplex'}
