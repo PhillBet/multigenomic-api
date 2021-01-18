@@ -1,21 +1,22 @@
 import mongoengine
 
-from .services import evidence
-from .services import external_cross_reference
-from .services import gene
-from .services import motif
-from .services import operon
-from .services import organism
-from .services import product
-from .services import promoter
-from .services import publication
-from .services import regulatory_complex
-from .services import regulatory_continuant
-from .services import regulatory_interaction
-from .services import sigma_factor
-from .services import term
-from .services import terminator
-from .services import transcription_unit
+from .services import evidences
+from .services import external_cross_references
+from .services import genes
+from .services import motifs
+from .services import operons
+from .services import organisms
+from .services import products
+from .services import promoters
+from .services import publications
+from .services import regulatory_complexes
+from .services import regulatory_continuants
+from .services import regulatory_interactions
+from .services import sigma_factors
+from .services import terms
+from .services import terminators
+from .services import transcription_factors
+from .services import transcription_units
 
 
 def connect(database, uri):
