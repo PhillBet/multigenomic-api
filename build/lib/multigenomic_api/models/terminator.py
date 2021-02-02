@@ -13,12 +13,10 @@ class TranscriptionTerminationSite(DynamicEmbeddedDocument):
     meta = {'abstract': True}
 
 
-class Terminators(DynamicDocument, Base):
+class Terminator(DynamicDocument, Base):
 
     class_ = fields.StringField(required=False, db_field="class")
     transcriptionTerminationSite = fields.EmbeddedDocumentField(TranscriptionTerminationSite, required=True)
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-
-    meta = {'collection': 'terminators'}
