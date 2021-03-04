@@ -22,3 +22,10 @@ def find_tf_id_by_product_id(product_id) -> str or None:
     except DoesNotExist:
         return None
 
+
+def find_tf_id_by_active_conformation_id(active_conf_id) -> [str] or None:
+    try:
+        return TranscriptionFactors.objects(active_conformations__id=active_conf_id)
+    except DoesNotExist:
+        return None
+

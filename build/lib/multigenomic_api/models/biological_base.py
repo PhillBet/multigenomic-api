@@ -23,6 +23,7 @@ class BiologicalBase(Base):
     citations = fields.EmbeddedDocumentListField(Citations, db_field="citations")
     external_cross_references = fields.EmbeddedDocumentListField(ExternalCrossReferences, db_field="externalCrossReferences")
     left_end_position = fields.IntField(required=False, db_field="leftEndPosition")
+    note = fields.StringField(required=False, db_field="note")
     organisms_id = fields.StringField(required=False)
     right_end_position = fields.IntField(required=False, db_field="rightEndPosition")
     sequence = fields.StringField(required=False)

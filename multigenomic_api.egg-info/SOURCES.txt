@@ -20,11 +20,11 @@ multigenomic_api/models/publications.py
 multigenomic_api/models/regulatory_complexes.py
 multigenomic_api/models/regulatory_continuants.py
 multigenomic_api/models/regulatory_interactions.py
+multigenomic_api/models/regulatory_sites.py
 multigenomic_api/models/sigma_factors.py
 multigenomic_api/models/terminators.py
 multigenomic_api/models/terms.py
 multigenomic_api/models/transcription_factor.py
-multigenomic_api/models/transcription_factor_regulatory_sites.py
 multigenomic_api/models/transcription_units.py
 multigenomic_api/services/__init__.py
 multigenomic_api/services/base.py
@@ -40,9 +40,9 @@ multigenomic_api/services/publications.py
 multigenomic_api/services/regulatory_complexes.py
 multigenomic_api/services/regulatory_continuants.py
 multigenomic_api/services/regulatory_interactions.py
+multigenomic_api/services/regulatory_sites.py
 multigenomic_api/services/sigma_factors.py
 multigenomic_api/services/terminators.py
 multigenomic_api/services/terms.py
-multigenomic_api/services/transcription_factor_regulatory_sites.py
 multigenomic_api/services/transcription_factors.py
 multigenomic_api/services/transcription_units.py

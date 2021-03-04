@@ -1,4 +1,4 @@
-from ..models.transcription_factor_regulatory_sites import RegulatorySites
+from ..models.regulatory_sites import RegulatorySites
 from . import base
 
 

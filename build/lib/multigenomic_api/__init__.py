@@ -16,6 +16,7 @@ from .services import sigma_factors
 from .services import terms
 from .services import terminators
 from .services import transcription_factors
+from .services import regulatory_sites
 from .services import transcription_units
 
 

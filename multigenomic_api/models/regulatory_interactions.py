@@ -21,6 +21,7 @@ class Promoter(DynamicEmbeddedDocument):
 
 class RegulatedEntity(DynamicEmbeddedDocument):
     id = fields.StringField(required=True, db_field="_id")
+    name = fields.StringField(required=True)
     type = fields.StringField(required=False)
     meta = {'abstract': True}
 
@@ -35,10 +36,10 @@ class Regulator(DynamicEmbeddedDocument):
 class RegulatoryInteractions(DynamicDocument, BiologicalBase):
     center_position = fields.FloatField(required=False, db_field="centerPosition")
     function = fields.StringField(required=False)
-    regulated_entities = fields.EmbeddedDocumentListField(RegulatedEntity, required=True, db_field="regulatedEntities")
+    mechanism = fields.StringField(required=False)
+    regulated_entity = fields.EmbeddedDocumentField(RegulatedEntity, required=True, db_field="regulatedEntity")
     regulator = fields.EmbeddedDocumentField(Regulator, required=True)
-    transcription_factor_regulatory_sites_id = fields.StringField(required=False, db_field="transcriptionFactorRegulatorySites_id")
-
+    regulatory_sites_id = fields.StringField(required=False, db_field="regulatorySites_id")
     type = fields.StringField(required=False)
 
     def __init__(self, **kwargs):
