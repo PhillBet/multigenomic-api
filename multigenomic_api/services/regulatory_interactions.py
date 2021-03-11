@@ -27,7 +27,7 @@ def find_regulator_by_regulated_entity_id(regulated_entity_id: str) -> [Regulato
 def find_regulators_by_regulated_entity_ids(regulated_entity_ids: [str]) -> [RegulatoryInteractions.regulator]:
     regulated_entities_regulators = []
     for regulated_entity_id in regulated_entity_ids:
-        regulatory_interactions = RegulatoryInteractions.objects.filter(regulatedEntity__match={"_id": regulated_entity_id})
+        regulatory_interactions = RegulatoryInteractions.objects(__raw__={"regulatedEntity._id": regulated_entity_id})
         for ri in regulatory_interactions:
             if ri.regulator:
                 ri.regulator["function"] = ri.function
