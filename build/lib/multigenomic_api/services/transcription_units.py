@@ -18,6 +18,10 @@ def find_by_gene_id(gene_id: str) -> [TranscriptionUnits]:
     return TranscriptionUnits.objects(genes_ids=gene_id)
 
 
+def find_by_promoter_id(promoter_id: str) -> [TranscriptionUnits]:
+    return TranscriptionUnits.objects(promoters_id=promoter_id)
+
+
 def get_operons_id_by_gene_id(gene_id: str) -> str:
     transcription_units = TranscriptionUnits.objects(genes_ids=gene_id)
     operon_ids = [tu.operons_id for tu in transcription_units]
