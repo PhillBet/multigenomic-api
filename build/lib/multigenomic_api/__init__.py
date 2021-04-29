@@ -21,7 +21,7 @@ from .services import transcription_units
 
 
 def connect(database, uri):
-    mongoengine.connect(database, host=uri)
+    mongoengine.connect(database, host=uri, authSource="admin")
 
 
 def disconnect():
