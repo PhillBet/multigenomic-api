@@ -16,11 +16,7 @@ def find_by_name(name: [str]) -> [TranscriptionFactors]:
 
 
 def find_tf_id_by_product_id(product_id) -> str or None:
-    try:
-        tf = TranscriptionFactors.objects.get(active_conformations__id=product_id)
-        return tf.id
-    except DoesNotExist:
-        return None
+    return TranscriptionFactors.objects(products_ids=product_id)
 
 
 def find_tf_id_by_active_conformation_id(active_conf_id) -> [str] or None:

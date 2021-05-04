@@ -8,3 +8,7 @@ def get_all() -> [RegulatoryComplexes]:
 
 def find_by_id(id_: str) -> RegulatoryComplexes:
     return base.find_one_by_id(RegulatoryComplexes, id_)
+
+
+def find_by_product_id(product_id) -> str or None:
+    return RegulatoryComplexes.objects(__raw__={"products.products_id": product_id})
