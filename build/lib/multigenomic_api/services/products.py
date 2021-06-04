@@ -12,3 +12,6 @@ def find_by_id(id_: str) -> Products:
 
 def find_by_gene_id(genes_id: str) -> Products:
     return Products.objects(genes_id=genes_id)
+
+def get_all_srnas() -> Products:
+    return Products.objects(type="small RNA")
