@@ -10,6 +10,10 @@ def find_by_id(id_: str) -> Terms:
     return base.find_one_by_id(Terms, id_)
 
 
+def find_by_name(name: str) -> Terms:
+    return base.find_by_name(Terms, name)
+
+
 def get_associated_members_ids(id_: str, member_type) -> [str]:
     members = Terms.objects(_id=id_).only("members").first()
     members_ids = members["members"][member_type]

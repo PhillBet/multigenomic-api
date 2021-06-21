@@ -38,6 +38,7 @@ class Terms(DynamicDocument, Base):
     ontologies_id = fields.StringField(required=True)
     sub_class_of = fields.ListField(fields.StringField(), required=False, db_field="subClassOf")
     super_class_of = fields.ListField(fields.StringField(), required=False, db_field="superClassOf")
+    synonyms = fields.ListField(required=False)
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
